@@ -1,0 +1,13 @@
+.divBackground{
+    width: 400px;
+    background-color: #c0d461;
+}
+.divPortal{
+    background-image: url("https://i.pinimg.com/originals/97/86/ec/9786ec883756c755df35a331ff902f3b.png");
+    background-size: 400px;
+}
+
+
+.image{
+    border-radius: 99999px;
+}

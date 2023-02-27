@@ -1,4 +1,4 @@
-.divBackground{
+/* .divBackground{
     width: 400px;
     background-color: #c0d461;
 }
@@ -10,4 +10,8 @@
 
 .image{
     border-radius: 99999px;
+} */
+
+.divBackground{
+    width: 300px;
 }

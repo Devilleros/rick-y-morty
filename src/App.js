@@ -1,19 +1,31 @@
 import axios from 'axios'
 import './App.css'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation, useNavigate} from 'react-router-dom'
 import Cards from './components/Cards/Cards.jsx'
 import Nav from './components/Nav/Nav'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import About from './components/About/About'
 import Detail from './components/Detail/Detail'
 import Error404 from './components/Error404/Error404'
+import Form from './components/Form/Form'
 
-//import SearchBar from './components/SearchBar/SearchBar.jsx'
-//import characters /*, { Rick }*/ from './data.js'
-//import Card from './components/Card/Card.jsx'
 
 function App () {
   const [characters, setCharacters] = useState([]);
+
+  const navigate = useNavigate();
+  const [access , setAccess] = useState(false)
+  const EMAIL = "ejemplo@gmail.com";
+  const PASSWORD = "Abc123#$%"
+
+  function login(userData) {
+    if(userData.email === EMAIL && userData.password === PASSWORD){
+      setAccess(true)
+      navigate("/home")
+    }
+  }
+
+  useEffect(() => {!access && navigate("/")} , [access])
 
   const onSearch = (id) => {
 
@@ -33,11 +45,15 @@ function App () {
   //   onClose = {onClose}
   }
   
+  const location = useLocation();
 
   return (
     <div className='App' style={{ padding: '25px' }}>
-      <Nav onSearch = {onSearch}/>
+      {
+        location.pathname !== "/" && <Nav onSearch = {onSearch}/>
+      }
       <Routes>
+        <Route path='/' element={<Form login={login}/>}/>
         <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/detail/:id' element={<Detail/>}/>
@@ -49,6 +65,11 @@ function App () {
 
 export default App
 
+
+
+//import SearchBar from './components/SearchBar/SearchBar.jsx'
+//import characters /*, { Rick }*/ from './data.js'
+//import Card from './components/Card/Card.jsx'
 /*
 <div>
         <Card

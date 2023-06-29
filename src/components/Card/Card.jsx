@@ -13,15 +13,15 @@ export default function Card(props) {
    return (
 
       <div className={styles.divBackground} key={props.id}>
-         <Link to={`/detail/${id}`} style={{ textDecoration: 'none' }}>
          <div className={styles.divBackground2}>
             <button className={styles.button} onClick={()=> onClose(id)}>X</button>
-            <h3 className={styles.nameCard}>{name}</h3>
-            <img className={styles.image} src={props.image} alt="" />
-            <h3 className={styles.speciesCard}>{props.species}</h3>
-            <h3 className={styles.genderCard}> {props.gender}</h3>
-         </div>
+            <Link to={`/detail/${id}`} style={{ textDecoration: 'none' }}>
+               <h3 className={styles.nameCard}>{name}</h3>
+               <img className={styles.image} src={props.image} alt="" />
+               <h3 className={styles.speciesCard}>{props.species}</h3>
+               <h3 className={styles.genderCard}> {props.gender}</h3>
             </Link>
+         </div>
       </div>
    );
 }

@@ -46,6 +46,7 @@
 }
 
 .nameCard{
+    height: 60px;
     color: #ffffff;
     text-shadow:
       0 0 7px #ffffff,

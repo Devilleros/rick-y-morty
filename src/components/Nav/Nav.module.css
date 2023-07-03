@@ -1,0 +1,23 @@
+.nav{
+    display: flex;
+    max-width: 1200px;
+    ;
+}
+
+
+.button{
+    
+    background-color: rgb(22, 113, 22);
+    font-size: large;
+    border-radius: 5px;
+    margin-left: 5px;
+    border-color: rgb(120, 151, 66); 
+    border-width: 3px;
+    color: #ffffff;
+    text-shadow:
+      0 0 7px #ffffff,
+      0 0 10px #fff,
+      0 0 21px #003725,
+      0 0 42px rgb(0, 137, 92),
+      0 0 82px rgb(0, 0, 0)
+}

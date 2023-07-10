@@ -23,13 +23,16 @@ export default function Form ({login}){
         login(userData)
     }
     return <form onSubmit={handleSubmit}>
-        <label htmlFor="">Email:</label>
-        <input type="text" value={userData.email} name="email" onChange={handleChange}/>
-        <p>{errors.email}</p>
-        <label >Password:</label>
-        <input type="password" value={userData.password} name="password" onChange={handleChange}/>
-        <p>{errors.password}</p>
-        {/* <input type="submit" value="Login"/> */}
-        <button className={styles.button}>Login</button>
+        <div className={styles.divForm}>
+            <label htmlFor="">Email:</label>
+            <input type="text" value={userData.email} name="email" onChange={handleChange}/>
+            <p>{errors.email}</p>
+            <label >Password:</label>
+            <input type="password" value={userData.password} name="password" onChange={handleChange}/>
+            <p>{errors.password}</p>
+            {/* <input type="submit" value="Login"/> */}
+            <button className={styles.button}>Login</button>
+
+        </div>
     </form>
 }

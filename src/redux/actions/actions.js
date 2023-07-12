@@ -1,4 +1,4 @@
-import {ADD_FAV , REMOVE_FAV} from "./action_type"
+import {ADD_FAV , REMOVE_FAV , FILTER_CARD , ORDER_CARD} from "./action_type"
 
 
 export const addFav = (character) => {
@@ -13,6 +13,15 @@ export const removeFav = (id) => ({
     payload: id
 })
 
+export const filterCart = (gender) => ({
+    type: FILTER_CARD,
+    payload: gender
+})
+
+export const orderCard = (order) => ({
+    type: ORDER_CARD,
+    payload: order
+})
 // export const getFav = () => {
 //     return function (dispatch) {
 //         axios()

@@ -25,9 +25,15 @@ export default function Reducer(state =initialState, action) {
                 myFavorites: state.allCharacters.filter((char) => char.gender === action.payload)
             }
         case ORDER_CARD:
+            let orderFav;
+            if(action.payload === "A"){
+                orderFav = state.myFavorites.sort((a,b) => a.id>b.id? 1: -1)
+            }else{
+                orderFav = state.myFavorites.sort((a,b) => a.id<b.id? 1: -1)    
+            }
             return{
                 ...state,
-                
+                myFavorites:  [...orderFav]
             }
         default:
             return {...state}

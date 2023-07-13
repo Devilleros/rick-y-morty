@@ -10,7 +10,8 @@ function Detail() {
     const [charDetail , setCharDetail] = useState({});
 
     useEffect(()=>{
-        axios(`http://rickandmortyapi.com/api/character/${id}`)
+        //axios(`http://rickandmortyapi.com/api/character/${id}`)
+        axios(`http://localhost:3001/rickandmorty/character/${id}`)
         .then((({data}) =>{
             if(data.name){
                 setCharDetail(data);

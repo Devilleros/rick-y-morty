@@ -35,7 +35,8 @@ function App () {
     }else if(!id){
       return alert("Hey! you must provide an id")
     }
-    axios(`http://rickandmortyapi.com/api/character/${id}`)
+    //axios(`http://rickandmortyapi.com/api/character/${id}`)
+    axios(`http://localhost:3001/rickandmorty/character/${id}`)
     .then(({data}) => { if(data.id){ setCharacters([...characters, data])}})
     .catch(err => alert(err.response.data.error))
   }

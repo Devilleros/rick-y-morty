@@ -38,7 +38,8 @@ function App () {
     //axios(`http://rickandmortyapi.com/api/character/${id}`)
     axios(`http://localhost:3001/rickandmorty/character/${id}`)
     .then(({data}) => { if(data.id){ setCharacters([...characters, data])}})
-    .catch(err => alert(err.response.data.error))
+    .catch(err => alert(err.message + "\n" + err.response.data))
+    //.catch(err => alert(err.message/*err.response.data.error*/))
   }
   
   const onClose = (id) =>{

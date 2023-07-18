@@ -18,12 +18,12 @@ function Detail() {
             }else{
                 window.alert("No hay personaje con ese ID")
             }
-        })).catch(err => alert(err.response.data.error))
+        })).catch(err => alert(err.message)/*alert(err.response.data.error)*/)
     },[id])
     return <div className={styles.div}>
-        <h1>{charDetail.name}</h1>
-        <h2>{charDetail.status}</h2>
-        <h2>{charDetail.origin?.name}</h2>
+        <h1>Name: {charDetail.name}</h1>
+        <h2>Status: {charDetail.status}</h2>
+        <h2>Origin: {charDetail?.origin}</h2>
     </div>
 }
 
